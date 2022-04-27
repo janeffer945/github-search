@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { GituserServiceService } from '../gituser-service.service';
+import { User } from '../user';
+
 
 @Component({
   selector: 'app-search-form',
@@ -7,9 +10,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchFormComponent implements OnInit {
 
-  constructor() { }
+  user:User;
+  username:string;
+  gitUserServiceService:GituserServiceService;
+  public showInput = true;
+  public showData = false;
 
-  ngOnInit(): void {
+  submitUsername(){
+    this.gitUserServiceService.getUserData(this.username);
+    this.showInput = true;
+    this.showData = false;
+  }
+
+  showUserInput(hideInput: any){
+    this.showInput = hideInput;
+    this.showData = false;
+  }
+  
+
+
+  constructor(gitUserServiceService:GituserServiceService) { 
+    this.gitUserServiceService = gitUserServiceService;
+  }
+
+  ngOnInit(){
   }
 
 }
