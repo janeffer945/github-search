@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFormComponent } from './search-form/search-form.component';
 import { UserResultComponent } from './user-result/user-result.component';
+import { AppHighlightDirective } from './app-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
-    UserResultComponent
+    UserResultComponent,
+    AppHighlightDirective
   ],
   imports: [
     BrowserModule,
