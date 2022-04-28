@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { GituserServiceService } from '../gituser-service.service';
+import { GituserServiceService } from '../gituser-service/service.service';
 import { User } from '../user';
 
 

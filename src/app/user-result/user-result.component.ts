@@ -1,5 +1,5 @@
 import { Component, OnInit,Input, Output,EventEmitter } from '@angular/core';
-import { GituserServiceService } from '../gituser-service.service';
+import { GituserServiceService } from '../gituser-service/service.service';
 import { User } from '../user';
 
 @Component({
@@ -8,10 +8,10 @@ import { User } from '../user';
   styleUrls: ['./user-result.component.css']
 })
 export class UserResultComponent implements OnInit {
-  user:User;
+  user:User | undefined;
   repoDetails = [];
   gituserServiceService:GituserServiceService;
-  hideInput:boolean;
+  hideInput:boolean | undefined;
 
 
   constructor(gituserServiceService:GituserServiceService) { 
